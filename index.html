@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Planner Seserahan Pernikahan | The Wedding Edit</title>
+<meta name="description" content="Buat daftar seserahan pernikahan dengan praktis. Atur checklist barang hantaran, adat dan tradisi, jumlah, status persiapan, serta anggaran seserahan dalam satu planner.">
+<meta name="keywords" content="planner seserahan pernikahan, daftar seserahan pernikahan, checklist seserahan pengantin, barang hantaran pernikahan, anggaran seserahan, seserahan adat Jawa, seserahan adat Sunda, seserahan adat Nusantara">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="The Wedding Edit">
+<meta property="og:title" content="Planner Seserahan Pernikahan | The Wedding Edit">
+<meta property="og:description" content="Susun daftar seserahan, checklist barang hantaran, dan anggaran pernikahan sesuai adat serta tradisi keluarga.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Planner Seserahan Pernikahan | The Wedding Edit">
+<meta name="twitter:description" content="Planner praktis untuk daftar barang, checklist, dan anggaran seserahan pernikahan.">
+<style>
+:root{--ink:#6f6257;--gold:#c7a878;--cream:#f7f3ed;--line:#e8dfd4}*{box-sizing:border-box}body{margin:0;background:#fbfaf8;color:#403a35;font:14px Arial,sans-serif}.wrap{max-width:1320px;margin:34px auto;padding:0 24px}.brand{color:#a48b68;letter-spacing:3px;font-weight:bold}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}h1{font: bold 34px Georgia;margin:10px 0}.muted{color:#81776e}.btn{border:1px solid var(--line);background:white;padding:9px 13px;border-radius:8px;cursor:pointer}.primary{background:var(--ink);color:white;border-color:var(--ink)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.card,.panel{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.metric{font-size:25px;font-weight:bold;margin-top:9px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;color:#81776e;font-size:12px;margin-bottom:5px}.field input,.field select,.toolbar input,.toolbar select{width:100%;padding:9px;border:1px solid var(--line);border-radius:7px;background:white}.toolbar{display:grid;grid-template-columns:minmax(150px,1fr) minmax(180px,1.15fr) auto auto;gap:10px;margin:20px 0;align-items:center}.toolbar input{min-width:0}.toolbar select{width:100%}.tablewrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:900px}th{background:var(--ink);color:white;text-align:left;padding:13px;font-size:14px}td{padding:11px;border-bottom:1px solid var(--line);font-size:14px}.actions{white-space:nowrap}.modal{display:none;margin:14px 0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formgrid .wide{grid-column:1/-1}.hint{font-size:12px;color:#81776e;margin:15px 0}dialog{border:1px solid var(--line);border-radius:12px;width:min(520px,94vw)}dialog::backdrop{background:#0006}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}@media(max-width:750px){.toolbar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.toolbar input,.toolbar select{width:100%}.cards{grid-template-columns:1fr 1fr}.meta{grid-template-columns:1fr}.wrap{margin:18px auto}}@media print{.noprint{display:none!important}body{background:white}.wrap{margin:0;max-width:none}.panel,.tablewrap{border:0}}
+
+@media(max-width:899px){
+ .wrap{margin:12px auto}
+ .tablewrap{max-height:65vh;overflow:auto}
+}
+</style></head>
+<body><main class="wrap" id="app">
+<div class="top"><div><div class="brand">THE WEDDING EDIT</div><h1>Planner Seserahan Pernikahan</h1><div class="muted">Susun checklist barang hantaran, pantau persiapan, dan atur anggaran seserahan dalam satu tempat.</div></div>
+<div class="noprint"><button class="btn primary" id="excel" title="Unduh daftar seserahan dalam format Excel atau CSV">Unduh Excel / CSV</button> <button class="btn" id="pdf" title="Cetak atau simpan daftar seserahan sebagai PDF">Cetak / Simpan PDF</button></div></div>
+<section class="panel meta" style="margin-top:18px"><div class="field"><label>Nama pasangan pengantin</label><input id="couple" placeholder="Contoh: Alya & Rizky"></div><div class="field"><label>Adat dan tradisi pernikahan</label><select id="custom"><option value="Nasional / umum">Nasional / umum</option><option>Jawa</option><option>Sunda</option><option>Batak</option><option>Minangkabau</option><option>Betawi</option><option>Melayu</option><option>Aceh</option><option>Bali</option><option>Bugis-Makassar</option><option>Dayak</option><option>Madura</option><option value="Sasak">Sasak</option><option>Toraja</option><option>Maluku</option><option>Papua</option><option value="Adat lainnya">Adat lainnya</option></select></div></section>
+<section class="cards"><div class="card"><div class="muted">Total anggaran seserahan</div><div class="metric" id="actual">Rp0</div></div><div class="card"><div class="muted">Belum</div><div class="metric" id="count-pending">0</div><div class="muted" style="font-size:11px">barang</div></div><div class="card"><div class="muted">Diproses</div><div class="metric" id="count-progress">0</div><div class="muted" style="font-size:11px">barang</div></div><div class="card"><div class="muted">Selesai</div><div class="metric" id="count-done">0</div><div class="muted" style="font-size:11px">barang</div></div></section>
+<div class="toolbar noprint"><input id="search" aria-label="Cari barang seserahan" placeholder="Cari nama barang seserahan..."><select id="filter"><option value="">Semua kategori seserahan</option></select><button class="btn primary" id="add" title="Tambahkan barang ke daftar seserahan">+ Tambah barang</button><button class="btn" id="reset" title="Kosongkan dan mulai ulang daftar seserahan">↺ Reset daftar</button></div>
+<div class="tablewrap"><table><thead><tr><th>No</th><th>Kategori</th><th>Nama barang seserahan</th><th>Jumlah</th><th>Biaya per item (Rp)</th><th>Status</th><th class="noprint">Aksi</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="hint">Gunakan daftar ini sebagai checklist seserahan pernikahan. Pilih kategori dan barang hantaran, lalu isi jumlah, biaya, serta status persiapannya. Sesuaikan pilihan dengan adat dan kesepakatan keluarga.</p>
+<dialog id="editor"><form method="dialog" id="form"><h3 id="formtitle">Tambah barang seserahan</h3><div class="formgrid">
+<div class="field wide"><label>Kategori seserahan</label><select id="cat"></select></div><div class="field wide"><label>Nama barang hantaran</label><select id="name-choice"></select><div class="muted" style="font-size:11px;margin-top:4px">Rekomendasi barang dapat menyesuaikan adat atau tradisi yang dipilih. Gunakan sebagai referensi dan sesuaikan dengan kebiasaan keluarga.</div><input id="name-custom" placeholder="Masukkan nama barang seserahan" style="display:none;margin-top:6px"></div>
+<div class="field"><label>Jumlah barang</label><input id="qty" type="number" min="1" value="1"></div><div class="field"><label>Status persiapan</label><select id="status"><option>Belum</option><option>Diproses</option><option>Selesai</option><option>Tidak digunakan</option></select></div>
+<div class="field wide"><label>Biaya per item seserahan (Rp)</label><input id="act" type="number" min="0" value=""></div></div><div class="dialog-actions"><button class="btn" value="cancel">Batal</button><button class="btn primary" id="save" value="default">Simpan</button></div></form></dialog>
+</main>
+<script>
+const groups={
+"Perlengkapan ibadah — Islam":["Mukena","Sajadah","Al-Qur'an","Tasbih","Peci / sarung"],
+"Perlengkapan ibadah — Kristen (Protestan & Katolik)":["Alkitab","Salib / crucifix (sesuai tradisi)","Rosario (Katolik)","Buku renungan","Buku doa / jurnal rohani","Buku misa (Katolik)","Medali rohani (opsional)"],
+"Perlengkapan ibadah — Hindu":["Kitab suci (Weda / Bhagavad Gita)","Perlengkapan persembahyangan","Canang sari (jika sesuai tradisi)","Dupa dan perlengkapan puja (opsional)"],
+"Perlengkapan ibadah — Buddha":["Kitab suci Tripitaka / buku paritta","Mala / tasbih Buddha","Buku doa atau paritta","Perlengkapan puja (sesuai tradisi)"],
+"Perlengkapan ibadah — Konghucu":["Kitab suci (Si Shu / Wu Jing)","Buku doa atau tuntunan ibadah","Hio / dupa (jika sesuai tradisi)","Perlengkapan sembahyang (sesuai tradisi)"],
+"Pakaian & aksesori":["Set pakaian / kebaya","Kain atau batik","Hijab / kerudung","Tas","Sepatu / sandal","Dompet","Jam tangan / aksesori"],
+"Perawatan diri":["Skincare wajah","Makeup","Body lotion / body care","Parfum","Perlengkapan mandi","Hair care"],
+"Perhiasan":["Cincin","Kalung","Gelang","Anting"],
+"Makanan & buah":["Buah-buahan","Kue tradisional","Cokelat / cookies","Roti / pastry","Makanan kering"],
+"Perlengkapan rumah":["Sprei / bed cover","Handuk","Peralatan makan","Peralatan rumah tangga kecil"],
+"Pelengkap & kemasan":["Hantaran dekoratif","Kotak / tray seserahan","Kartu ucapan","Pita dan dekorasi","Biaya wrapping / dekorasi"]};
+const adatSuggestions={
+"Jawa":{"Pakaian & aksesori":["Jarik / kain batik","Kebaya","Batik motif pilihan"],"Makanan & buah":["Jajanan pasar / jadah","Wajik / jenang"],"Pelengkap & kemasan":["Suruh ayu (jika digunakan keluarga)"]},
+"Sunda":{"Pakaian & aksesori":["Kebaya Sunda","Kain samping"],"Makanan & buah":["Hantaran makanan khas keluarga"],"Pelengkap & kemasan":["Sirih / seupaheun (jika digunakan)"]},
+"Batak":{"Pakaian & aksesori":["Ulos (sesuai marga dan adat)","Kain adat Batak"],"Makanan & buah":["Hantaran makanan khas keluarga"],"Pelengkap & kemasan":[]},
+"Minangkabau":{"Pakaian & aksesori":["Perlengkapan atau kain adat Minang"],"Makanan & buah":["Hantaran makanan khas Minang"],"Pelengkap & kemasan":["Sirih pinang (jika digunakan)"]},
+"Betawi":{"Pakaian & aksesori":["Kain / busana Betawi"],"Makanan & buah":["Roti buaya (jika menjadi bagian prosesi)"],"Pelengkap & kemasan":["Sirih dare (jika digunakan)"]},
+"Melayu":{"Pakaian & aksesori":["Kain songket","Busana Melayu"],"Makanan & buah":[],"Pelengkap & kemasan":["Tepak sirih (jika digunakan)"]},
+"Aceh":{"Pakaian & aksesori":["Kain songket Aceh"],"Makanan & buah":[],"Pelengkap & kemasan":["Perlengkapan adat sesuai keluarga"]},
+"Bali":{"Pakaian & aksesori":["Kain / busana adat Bali"],"Makanan & buah":[],"Pelengkap & kemasan":["Perlengkapan upacara sesuai tradisi keluarga"]},
+"Bugis-Makassar":{"Pakaian & aksesori":["Kain sutra / sarung (lipa')"],"Makanan & buah":[],"Pelengkap & kemasan":["Perlengkapan adat sesuai keluarga"]},
+"Dayak":{"Pakaian & aksesori":["Kain tenun / aksesori adat setempat"],"Makanan & buah":[],"Pelengkap & kemasan":["Perlengkapan adat sesuai sub-suku"]},
+"Madura":{"Pakaian & aksesori":["Kain / busana Madura"],"Makanan & buah":["Hantaran makanan khas keluarga"],"Pelengkap & kemasan":[]},
+"Sasak":{"Pakaian & aksesori":["Kain tenun Sasak"],"Makanan & buah":[],"Pelengkap & kemasan":["Perlengkapan adat sesuai keluarga"]},
+"Toraja":{"Pakaian & aksesori":["Kain tenun / aksesori adat Toraja"],"Makanan & buah":[],"Pelengkap & kemasan":["Perlengkapan adat sesuai keluarga"]},
+"Maluku":{"Pakaian & aksesori":["Kain / busana adat setempat"],"Makanan & buah":["Hantaran khas keluarga"],"Pelengkap & kemasan":[]},
+"Papua":{"Pakaian & aksesori":["Kain / aksesori adat setempat"],"Makanan & buah":["Hantaran khas keluarga"],"Pelengkap & kemasan":["Perlengkapan adat sesuai suku dan keluarga"]},
+"Adat lainnya":{"Pakaian & aksesori":["Kain / busana adat setempat"],"Makanan & buah":["Makanan khas daerah"],"Pelengkap & kemasan":["Perlengkapan adat sesuai kesepakatan keluarga"]}
+};
+const cats=Object.keys(groups),fmt=n=>'Rp'+Number(n||0).toLocaleString('id-ID');let data=Array.from({length:7},()=>({cat:'',name:'',qty:1,act:0,status:'Belum'})),editIndex=-1;
+const $=id=>document.getElementById(id);const saveLocal=()=>{localStorage.setItem('twe-seserahan-v2',JSON.stringify(data));localStorage.setItem('twe-adat-choice',$('custom').value)};
+try{const stored=JSON.parse(localStorage.getItem('twe-seserahan-v2'));if(Array.isArray(stored))data=stored}catch{}
+$('cat').add(new Option('Pilih kategori',''));cats.forEach(c=>{$('filter').add(new Option(c,c));$('cat').add(new Option(c,c))});$('custom').value=localStorage.getItem('twe-adat-choice')||'Nasional / umum';fillNameChoices();
+function fillNameChoices(selected=''){
+ const cat=$('cat').value, base=groups[cat]||[], adat=$('custom').value, extras=adatSuggestions[adat]?.[cat]||[], opts=[...new Set([...base,...extras])];
+ $('name-choice').innerHTML='<option value="">Pilih nama barang</option>'+opts.map(n=>'<option>'+n.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</option>').join('')+'<option value="__custom">Tulis nama sendiri…</option>';
+ if(selected && opts.includes(selected)){ $('name-choice').value=selected;$('name-custom').style.display='none'; }
+ else if(selected){ $('name-choice').value='__custom';$('name-custom').style.display='block';$('name-custom').value=selected; }
+ else {$('name-choice').value='';$('name-custom').style.display='none';$('name-custom').value='';}
+}
+$('cat').addEventListener('change',()=>fillNameChoices());$('custom').addEventListener('change',()=>fillNameChoices());
+$('name-choice').addEventListener('change',()=>{const custom=$('name-choice').value==='__custom';$('name-custom').style.display=custom?'block':'none';if(custom)$('name-custom').focus();});
+function render(){let q=$('search').value.toLowerCase(),cat=$('filter').value,shown=data.map((x,i)=>({...x,i})).filter(x=>(!cat||x.cat===cat)&&(!q||(x.name+' '+x.cat).toLowerCase().includes(q)));$('rows').innerHTML=shown.map(x=>`<tr><td>${x.i+1}</td><td>${x.cat||'<span class="muted">Pilih saat mengisi</span>'}</td><td>${x.name||'<span class="muted">Barang belum diisi</span>'}</td><td>${x.qty}</td><td>${fmt(x.act)}</td><td>${x.name?x.status:'—'}</td><td class="noprint actions"><button class="btn" onclick="editItem(${x.i})">Edit</button> <button class="btn" onclick="deleteItem(${x.i})">Hapus</button></td></tr>`).join('');let active=data.filter(x=>x.name.trim()&&x.status!=='Tidak digunakan'),a=active.reduce((s,x)=>s+x.qty*x.act,0);$('actual').textContent=fmt(a);$('count-pending').textContent=active.filter(x=>x.status==='Belum').reduce((s,x)=>s+x.qty,0);$('count-progress').textContent=active.filter(x=>x.status==='Diproses').reduce((s,x)=>s+x.qty,0);$('count-done').textContent=active.filter(x=>x.status==='Selesai').reduce((s,x)=>s+x.qty,0)}
+function editItem(i=-1){editIndex=i;let x=i<0?{cat:'',name:'',qty:1,act:'',status:'Belum'}:data[i];$('formtitle').textContent=i<0?'Tambah barang':'Edit barang';$('cat').value=x.cat;fillNameChoices(x.name);$('qty').value=x.qty;$('act').value=x.act;$('status').value=x.status;$('editor').showModal()}window.editItem=editItem;
+window.deleteItem=i=>{if(confirm('Hapus barang ini?')){data.splice(i,1);saveLocal();render()}};
+$('add').onclick=()=>editItem();$('reset').onclick=()=>{if(confirm('Reset seluruh data seserahan, nama pasangan, dan pilihan adat? Tindakan ini tidak dapat dibatalkan.')){data=Array.from({length:7},()=>({cat:'',name:'',qty:1,act:0,status:'Belum'}));$('couple').value='';$('custom').value='Nasional / umum';$('search').value='';$('filter').value='';localStorage.removeItem('twe-seserahan-v2');localStorage.removeItem('twe-adat-choice');fillNameChoices();render();}};$('form').onsubmit=e=>{if(e.submitter?.value==='cancel')return;e.preventDefault();let x={cat:$('cat').value,name:($('name-choice').value==='__custom'?$('name-custom').value:$('name-choice').value).trim(),qty:Math.max(1,+$('qty').value||1),act:Math.max(0,+$('act').value||0),status:$('status').value};if(!x.name){alert('Isi nama barang terlebih dahulu.');return;}if(!x.cat){alert('Pilih kategori terlebih dahulu.');return;}if(editIndex<0)data.push(x);else data[editIndex]=x;saveLocal();$('editor').close();render()};
+$('search').oninput=render;$('filter').onchange=render;
+const exportBaseName=()=>{const couple=$('couple').value.trim().replace(/[\\/:*?"<>|]/g,'').replace(/\s+/g,' ').trim();return couple?`Seserahan ${couple}`:'Seserahan'};
+$('excel').onclick=()=>{let rows=[['THE WEDDING EDIT - DAFTAR SESERAHAN'],['Nama pasangan',$('couple').value],['Adat / tradisi',$('custom').value],[],['No','Kategori','Rincian barang','Jumlah','Biaya/item','Status'],...data.map((x,i)=>[i+1,x.cat,x.name,x.qty,x.act,x.status])];let csv='\\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\\r\\n'),blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=exportBaseName()+'.csv';a.click();URL.revokeObjectURL(url)};
+$('pdf').onclick=()=>{const oldTitle=document.title;document.title=exportBaseName();const restore=()=>{document.title=oldTitle;window.removeEventListener('afterprint',restore)};window.addEventListener('afterprint',restore);window.print();};render();
+</script></body></html>
