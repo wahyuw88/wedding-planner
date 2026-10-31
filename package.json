@@ -1,0 +1,9 @@
+{
+  "name": "the-wedding-edit-seserahan-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web app sederhana untuk merencanakan daftar dan anggaran seserahan.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
