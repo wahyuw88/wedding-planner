@@ -1,8 +1,0 @@
-{
-  "name": "the-wedding-edit-seserahan-planner",
-  "version": "1.0.1",
-  "private": true,
-  "description": "The Wedding Edit Seserahan Planner",
-  "scripts": { "start": "node server.js" },
-  "engines": { "node": ">=18" }
-}
